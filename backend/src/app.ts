@@ -12,12 +12,18 @@ import { libraryRouter } from "./routes/library";
 export function createApp() {
   const app = express();
 
+  // app.use(
+  //   cors({
+  //     origin: process.env.FRONTEND_ORIGIN,
+  //     credentials: true,
+  //   })
+  // );
   app.use(
-    cors({
-      origin: process.env.FRONTEND_ORIGIN,
-      credentials: true,
-    })
-  );
+  cors({
+    origin: process.env.FRONTEND_ORIGIN || "http://localhost:5173",
+    credentials: true,
+  })
+);
 
   app.use(express.json({}));
   app.use(cookieParser());
