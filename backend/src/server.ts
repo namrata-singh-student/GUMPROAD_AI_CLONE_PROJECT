@@ -16,3 +16,11 @@ main().catch((err) => {
   console.error("boot failed", err);
   process.exit(1);
 });
+try {
+  console.log("🚀 Starting server...");
+
+  // your existing imports + code
+
+} catch (err) {
+  console.error("🔥 CRASH ERROR:", err);
+}
