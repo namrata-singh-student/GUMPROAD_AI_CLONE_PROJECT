@@ -24,3 +24,14 @@ try {
 } catch (err) {
   console.error("🔥 CRASH ERROR:", err);
 }
+
+console.log("STEP 1");
+
+import express from "express";
+console.log("STEP 2");
+
+import app from "./app";
+console.log("STEP 3");
+
+import mongoose from "mongoose";
+console.log("STEP 4");
