@@ -1,3 +1,7 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+console.log("ENV CHECK:", process.env.MONGO_URI);
 import "dotenv/config";
 
 import { createApp } from "./app";
@@ -35,3 +39,12 @@ console.log("STEP 3");
 
 import mongoose from "mongoose";
 console.log("STEP 4");
+console.log("STEP 5 - before DB");
+
+mongoose.connect(process.env.MONGO_URI!)
+  .then(() => console.log("✅ DB connected"))
+  .catch(err => {
+    console.error("❌ DB ERROR:", err);
+  });
+
+console.log("STEP 6 - after DB");
